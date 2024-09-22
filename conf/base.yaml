@@ -1,0 +1,17 @@
+
+num_rounds: 25 # number of DFL rounds in the experiment
+num_clients: 10 # number of total clients available (this is also the number of partitions we need to create)
+batch_size: 20 # batch size to use by clients during training
+num_classes: 11 # number of classes in our dataset (we use MNIST) -- this tells the model how to set up its output fully-connected layer
+local_epoch: 1 # num of epoch for each client in the network
+path_to_csv: 'conf/fully_conn_graph.csv'  # This is the file that has the graph information (Topology, Comp Time, Communication Time)
+target_client: 5  # The client that will aggregate and produce the global model
+res_file_path: ''  # The file hat has the results of the experiment
+random_main_aggregator: True # selecting a random main aggregator (target client)
+dataset: 'OrganAMNIST'  # MNIST, PathMNIST, OrganAMNIST
+NonIID: False
+model: 'Net'
+input_size: 28
+optimizer: ADM
+input_channels: 1
+method: proposed   # proposed, p2p, gossip
